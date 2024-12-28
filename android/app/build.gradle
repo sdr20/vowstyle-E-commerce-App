@@ -1,0 +1,39 @@
+plugins {
+    id "com.android.application"  // Android application plugin
+    id "kotlin-android"  // Kotlin support plugin for Android
+    id "dev.flutter.flutter-gradle-plugin"  // Flutter Gradle plugin (make sure it's applied after Kotlin and Android plugins)
+}
+
+android {
+    namespace = "com.example.vowstyle"  // Unique application package name
+    compileSdk = 34  // Set to a lower version compatible with current AGP (AGP 8.1.0 works with SDK 33)
+
+    ndkVersion = flutter.ndkVersion  // NDK version from Flutter settings
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8  // Set Java source compatibility
+        targetCompatibility = JavaVersion.VERSION_1_8  // Set Java target compatibility
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8  // Set Kotlin JVM target version to 1.8
+    }
+
+    defaultConfig {
+        applicationId = "com.example.vowstyle"  // Unique ID for your Android application
+        minSdk = flutter.minSdkVersion  // Minimum SDK version (Flutter settings)
+        targetSdk = flutter.targetSdkVersion  // Target SDK version (Flutter settings)
+        versionCode = flutter.versionCode  // App version code (Flutter settings)
+        versionName = flutter.versionName  // App version name (Flutter settings)
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug  // Use debug signing config for release builds
+        }
+    }
+}
+
+flutter {
+    source = "../.."  // Path to Flutter source, usually two directories up from the app-level build.gradle
+}

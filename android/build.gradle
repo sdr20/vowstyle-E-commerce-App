@@ -1,0 +1,35 @@
+buildscript {
+    repositories {
+        google()  // Google's Maven repository
+        mavenCentral()  // Central Maven repository for other dependencies
+    }
+
+    dependencies {
+        // Update AGP to version 8.1.0 or higher
+        classpath 'com.android.tools.build:gradle:8.1.0'  // Updated to AGP 8.1.0
+    }
+}
+
+allprojects {
+    repositories {
+        google()  // Google's Maven repository
+        mavenCentral()  // Central Maven repository for other dependencies
+    }
+}
+
+rootProject.buildDir = "../build"  // Sets the root build directory to one level above the default
+
+// Configure build directories for each subproject to be within a named folder inside the root build directory
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+
+// Ensures that the app module is evaluated before others if you have multiple submodules
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+// Clean task to remove the build directory when executing the clean command
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir  // Deletes the root project's build directory
+}

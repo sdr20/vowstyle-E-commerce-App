@@ -1,0 +1,96 @@
+name: vowstyle
+description: "A stylish and innovative Flutter app."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.5.0-180.3.beta <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # UI and icon support
+  cupertino_icons: ^1.0.8
+  
+  # State management (choose one if needed)
+  provider: ^6.1.2
+  # riverpod: ^2.3.0 # Uncomment if using Riverpod
+
+  # Networking
+  http: ^1.1.0
+  dio: ^5.2.0 # Alternative to http
+
+  # Local storage
+  shared_preferences: ^2.2.2
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # UI components and animations
+  flutter_slidable: ^2.0.0
+  animations: ^2.0.6
+  google_fonts: ^6.2.1
+
+  # Other utilities (add as needed)
+  intl: ^0.18.0 # For date and number formatting
+  path_provider: ^2.0.15 # For file storage paths
+  font_awesome_flutter: ^10.8.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # Linting for better code quality
+  flutter_lints: ^4.0.0
+
+  # Testing utilities
+  mockito: ^5.4.0 # For mocking dependencies
+  # mocktail: ^1.2.0 # Uncomment if using mocktail instead
+
+flutter:
+  uses-material-design: true
+
+  # Asset configuration
+  assets:
+    - assets/images/batlag.jpg
+    - assets/images/f1.jpeg
+    - assets/images/f2.webp
+    - assets/images/f3.webp
+    - assets/images/f4.webp
+    - assets/images/f5.webp
+    - assets/images/f6.webp
+    - assets/images/f8.webp
+    - assets/images/f9.webp
+    - assets/images/f92.webp
+    - assets/images/f93.webp
+    - assets/images/Garcia.jpg
+    - assets/images/Gomolon.jpg
+    - assets/images/Lloren.jpg
+    - assets/images/MG.jpg
+    - assets/images/satin_fabric.jpg
+    - assets/images/lace_fabric.jpg
+    - assets/images/silk_fabric.jpg
+    - assets/images/experttailoring1.jpg
+    - assets/images/experttailoring2.jpg
+    - assets/images/experttailoring3.jpg
+    - assets/icons/  
+
+  # Custom fonts
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
+    - family: Pacifico
+      fonts:
+        - asset: assets/fonts/Pacifico-Regular.ttf
+
+  # If using native platform integration
+  # plugin:
+  #   platforms:
+  #     android:
+  #       package: com.example.vowstyle
+  #       pluginClass: VowstylePlugin
